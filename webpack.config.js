@@ -1,32 +1,33 @@
-const path = require("path");
+const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
-  plugins: [new ReactRefreshWebpackPlugin()],
+  entry: './src/index.js',
+  mode: 'development',
+  plugins: [new ReactRefreshWebpackPlugin(), new ESLintWebpackPlugin()],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          presets: ["@babel/env"],
+          presets: ['@babel/env'],
           plugins: [require.resolve('react-refresh/babel')]
         }
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
+  resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'dist/'),
+    publicPath: '/dist/',
+    filename: 'bundle.js'
   },
   devServer: {
     static: {
