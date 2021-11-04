@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import "./App.css";
+import React, {useState} from 'react';
+import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <h1>{`You have clicked ${count} times.`}</h1>
-      <button type="button" onClick={() => {setCount(count + 1)}}>Increment</button>
+      <button type="button" onClick={() => {setCount(count + 1);}}>Increment</button>
     </div>
   );
 }
