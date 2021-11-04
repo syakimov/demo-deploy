@@ -1,5 +1,5 @@
 {
-    "extends": [
-        "prettier"
-    ]
+  "singleQuote": false,
+  "printWidth": 85,
+  "trailingComma": "none"
 }
